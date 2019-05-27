@@ -1,10 +1,32 @@
+const path = require("path")
+
+const here = (...p) => path.join(__dirname, ...p)
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `FPMA Nantes`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    author: `@tolotrasmile`,
   },
   plugins: [
+    "gatsby-plugin-emotion",
+    "gatsby-transformer-remark",
+    "gatsby-plugin-sass",
+    {
+      resolve: `gatsby-mdx`,
+      options: {
+        defaultLayouts: {
+          default: here("./src/components/markdown-layout.js"),
+        },
+        extensions: [".mdx", ".md", ".markdown"],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`PT+Sans`],
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
