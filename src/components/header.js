@@ -4,27 +4,26 @@ import { css } from "@emotion/core"
 import React from "react"
 
 function HeaderLink({ to, children }) {
+
+  React.useEffect(() => {
+    
+  })
+
   return (
     <li
       css={css`
-        padding-left: 1rem;
-        padding-right: 1rem;
+        height: var(--header-height);
         margin: 0;
-        .active {
-          border-left-color: rgb(32, 28, 41);
-          border-left-style: solid;
-          border-left-width: 1px;
-          border-right-color: rgb(32, 28, 41);
-          border-right-style: solid;
-          border-right-width: 1px;
-        }
+        border-bottom: 2px solid red;
       `}
     >
       <Link
         to={to}
         css={css`
           text-decoration: none;
-          height: 70px;
+          font-size: 1rem;
+          padding-left: 1rem;
+          padding-right: 1rem;
         `}
         activeClassName="active"
       >
@@ -34,61 +33,64 @@ function HeaderLink({ to, children }) {
   )
 }
 
-const Header = ({ title }) => (
-  <header
-    css={css`
-      margin-bottom: 1.45rem;
-      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
-      ul {
-        list-style: none;
-        list-style-image: none;
-        display: flex;
-        align-items: "center";
-        line-height: 70px;
-      }
-    `}
-  >
-    <div
+function Header({ title }) {
+  return (
+    <header
       css={css`
-        margin: 0 auto;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+        padding: 0 1rem;
+        background-color: white;
+        z-index: 1000;
+        border-bottom: 1px solid #ddd;
+        ul {
+          list-style: none;
+          list-style-image: none;
+          display: flex;
+          align-items: "center";
+          line-height: var(--header-height);
+        }
       `}
     >
-      <h1
+      <div
         css={css`
-          margin: 0;
-          font-size: 2em;
-          padding: 0 1rem;
-          line-height: 70px;
-          font-size: 1.5rem;
-          height: 70px;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
         `}
       >
-        <Link
-          to="/"
-          style={{
-            textDecoration: `none`,
-          }}
+        <h1
+          css={css`
+            margin: 0;
+            font-size: 2em;
+            line-height: var(--header-height);
+            font-size: 1.5rem;
+            height: var(--header-height);
+          `}
         >
-          {title}
-        </Link>
-      </h1>
-      <nav
-        css={css`
-          display: block;
-        `}
-      >
-        <ul style={{ margin: 0 }}>
-          <HeaderLink to="/stk">STK</HeaderLink>
-          <HeaderLink to="/hello">hello</HeaderLink>
-        </ul>
-      </nav>
-    </div>
-  </header>
-)
+          <Link
+            to="/"
+            style={{
+              textDecoration: `none`,
+            }}
+          >
+            {title}
+          </Link>
+        </h1>
+        <nav
+          css={css`
+            display: block;
+          `}
+        >
+          <ul style={{ margin: 0 }}>
+            <HeaderLink to="/">Accueil</HeaderLink>
+            <HeaderLink to="/sections">Sections</HeaderLink>
+            <HeaderLink to="/hello">hello</HeaderLink>
+          </ul>
+        </nav>
+      </div>
+    </header>
+  )
+}
 
 Header.propTypes = {
   title: PropTypes.string,

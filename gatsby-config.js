@@ -24,7 +24,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`PT+Sans`],
+        fonts: [`PT+Sans`, `Rubik`],
       },
     },
     `gatsby-plugin-react-helmet`,

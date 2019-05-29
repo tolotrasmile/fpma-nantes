@@ -8,9 +8,10 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
+import { css } from "@emotion/core"
 
 import Header from "./header"
-import "./layout.scss"
+import "./layout.css"
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -27,18 +28,29 @@ const Layout = ({ children }) => (
       <>
         <Header title={data.site.siteMetadata.title} />
         <div
-          style={{
-            margin: `0 auto`,
-            padding: `0px 1.8875rem 1.85rem`,
-            paddingTop: 0,
-          }}
+          css={css`
+            background-color: white;
+            padding: 3rem 0;
+            z-index: 10;
+          `}
         >
-          <main>{children}</main>
-          <footer>
-            © {new Date().getFullYear()}, Built with
-            {` `}
-            <a href="https://www.gatsbyjs.org">Gatsby</a>
-          </footer>
+          <div
+            css={css`
+              margin: 0 auto;
+              background-color: #fff;
+              padding: 3em;
+              border-radius: 10px;
+            `}
+          >
+            <main>{children}</main>
+            <footer
+              css={css`
+                margin-top: 2rem;
+              `}
+            >
+              © FPMA Nantes {new Date().getFullYear()}
+            </footer>
+          </div>
         </div>
       </>
     )}
