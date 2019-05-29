@@ -1,5 +1,5 @@
-import React from 'react'
-import GoogleMapReact from 'google-map-react'
+import React from "react"
+import GoogleMapReact from "google-map-react"
 
 const defaultProps = {
   center: {
@@ -12,18 +12,13 @@ const defaultProps = {
 const AnyReactComponent = ({ text }) => <div>{text}</div>
 
 const GoogleMap = () => (
-  <div style={{ height: '100vh', width: '100%' }}>
+  <div style={{ height: "100vh", width: "100%" }}>
     <GoogleMapReact
-      // bootstrapURLKeys={{ key: 'AlzaSyBRKoTpCZsUXfcXyxHxoK-PpXMHYwfqs8o' }}
-      bootstrapURLKeys={{ key: 'AIzaSyBN6PBA4eqChtsUNmqbylZdHbHbF-zjZ8Y' }}
+      bootstrapURLKeys={{ key: "AIzaSyBN6PBA4eqChtsUNmqbylZdHbHbF-zjZ8Y" }}
       defaultCenter={defaultProps.center}
       defaultZoom={defaultProps.zoom}
     >
-      <AnyReactComponent
-        lat={59.955413}
-        lng={30.337844}
-        text={'Google Map'}
-      />
+      <AnyReactComponent lat={59.955413} lng={30.337844} text="Google Map" />
     </GoogleMapReact>
   </div>
 )

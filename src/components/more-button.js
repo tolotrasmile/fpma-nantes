@@ -21,6 +21,7 @@ function MoreButton({ children, ...props }) {
           padding: 0.5rem 1rem;
           border-radius: 5px;
           color: white;
+          cursor: pointer;
           background: linear-gradient(
             to right,
             rgb(255, 138, 0),
@@ -43,7 +44,7 @@ function MoreButton({ children, ...props }) {
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          class="icon-arrow-right"
+          className="icon-arrow-right"
         >
           <path
             d="M7 12.5L23 12.5"
@@ -75,8 +76,8 @@ function MoreButton({ children, ...props }) {
               y2="9.73465"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#FFF" />
-              <stop offset="1" stop-color="#FFF" />
+              <stop stopColor="#FFF" />
+              <stop offset="1" stopColor="#FFF" />
             </linearGradient>
             <linearGradient
               id="paint1_linear"
@@ -86,8 +87,8 @@ function MoreButton({ children, ...props }) {
               y2="12.2748"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#FFF" />
-              <stop offset="1" stop-color="#FFF" />
+              <stop stopColor="#FFF" />
+              <stop offset="1" stopColor="#FFF" />
             </linearGradient>
             <linearGradient
               id="paint2_linear"
@@ -97,8 +98,8 @@ function MoreButton({ children, ...props }) {
               y2="17.3419"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#FFF" />
-              <stop offset="1" stop-color="#FFF" />
+              <stop stopColor="#FFF" />
+              <stop offset="1" stopColor="#FFF" />
             </linearGradient>
           </defs>
         </svg>
