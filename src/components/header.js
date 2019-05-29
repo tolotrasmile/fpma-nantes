@@ -26,7 +26,7 @@ function HeaderLink({ to, children }) {
           padding-left: 1rem;
           padding-right: 1rem;
           transition: color 0.3s ease-in;
-          color: ${isActive ? "rgb(218, 27, 96)" : null};
+          color: ${isActive ? "rgb(218, 27, 96)" : "rgb(96, 96, 96)"};
         `}
         activeClassName="active"
       >
